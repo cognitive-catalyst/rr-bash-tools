@@ -5,8 +5,9 @@ logs
 # vi swap
 *.swp
 
-# project solr configuration
+# project configuration files
 *_config
+*.config
 
 # Runtime data
 pids
