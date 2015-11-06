@@ -1,18 +1,9 @@
 #!/bin/bash
 
-name_prompt() {
-	echo -n "Enter the cluster's name : "
-	read clusterName
-}
+. ./common.sh
 
-while true; do
-	if [[ $clusterName  ]]
-	then
-		break;
-	fi
+getClusterName
 
-	name_prompt
-done
 
 clusterID=`cat ../config/${clusterName}_cluster.config | python -c 'import json,sys;obj=json.load(sys.stdin);print obj["solr_cluster_id"]'`
 

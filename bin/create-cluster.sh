@@ -1,19 +1,8 @@
 #!/bin/bash
 
-name_prompt() {
-	echo -n "Enter the cluster's name : "
-	read clusterName
-}
+. ./common.sh
 
-while true; do
-	name_prompt
-
-	if [[ $clusterName  ]]
-	then
-		break;
-	fi
-done
-
+getClusterName
 
 curl -H 'content-type: application/json' -X POST -u `cat ../config/creds` "https://gateway.watsonplatform.net/retrieve-and-rank/api/v1/solr_clusters" -d '{"cluster_name": "'"${clusterName}"'" }' > ../config/${clusterName}_cluster.config
 
