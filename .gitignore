@@ -33,5 +33,11 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
-# do not check in our credentials!
-creds
+# ignore configuration
+config
+
+#ignore data
+data
+
+#ignore deploy
+deploy

@@ -32,14 +32,14 @@ Create a cluster and check on its status. The status of READY indicates the serv
 ```
 cd bin
 ./create-cluster.sh
-check-cluster.sh
+./check-cluster.sh
 ```
 
 While waiting on the READY state, edit your SOLR configuration. For purposes of this tutorial, use the base_config in the samples directory.
 
 ```
 # assuming you are bin directory
-cp -r ../samples/base_config ../lib/${clusterName}_solr_config
+cp -r ../samples/base_config ../config/solr_config
 ```
 
 Once your cluster is READY, then load your configuration and create a collection:
